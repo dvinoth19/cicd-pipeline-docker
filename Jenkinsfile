@@ -14,9 +14,9 @@ pipeline {
 		}
 		steps {
 		    scripts {
-			    app = docker.build("dvinoth19/node-app")
+			    app=docker.build("dvinoth19/node-app")
 			    app.inside {
-			    sh 'echo $(curl localhost:8080)'
+			    sh 'echo $(curl http://54.188.233.15:8081)'
 			    }
 			}
 		}
