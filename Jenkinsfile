@@ -13,7 +13,7 @@ pipeline {
 		    script {
 			    app = docker.build("dvinoth19/node-app")
 			    app.inside {
-			    sh 'echo $(curl localhost:8081)'
+			    sh 'echo $(curl 34.214.8.105:8081)'
 			    }
 			}
 		}
@@ -22,7 +22,7 @@ pipeline {
 	stage('Push Docker Image') {
 		steps {
 			script {
-				docker.withRegistry('https://registry.hub.docker.com', 'docker_hub_login') {
+				docker.withRegistry('https://registry.hub.docker.com', 'dvinoth19') {
 					app.push("${env.BUILD_NUMBER}")
 					app.push("latest")
 				}
