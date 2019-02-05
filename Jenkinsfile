@@ -14,7 +14,7 @@ pipeline {
 		}
 		steps {
 		    scripts {
-			    app = docker.build("dvinoth19:Virus$1909/node-app")
+			    app = docker.build("github_id/node-app")
 			    app.inside {
 			    sh 'echo $(curl localhost:8080)'
 			    }
@@ -28,7 +28,7 @@ pipeline {
 		}
 		steps {
 			script {
-				docker.withRegistry('https://registry.hub.docker.com', 'dvinoth19:Virus$1909') {
+				docker.withRegistry('https://registry.hub.docker.com', 'dockerhu') {
 					app.push("${env.BUILD_NUMBER}")
 					app.push("latest")
 				}
