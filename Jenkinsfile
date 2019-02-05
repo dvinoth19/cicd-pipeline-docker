@@ -14,7 +14,7 @@ pipeline {
         }
     stage('Build Docker Image')	{
 		steps {
-		    scripts {
+		    script {
 			    app = docker.build("dvinoth19/node-app")
 			    app.inside {
 			    sh 'echo $(curl localhost:8081)'
