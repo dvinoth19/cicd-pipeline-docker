@@ -13,7 +13,7 @@ pipeline {
 		    script {
 			    app = docker.build("dvinoth19/node-app")
 			    app.inside {
-			    sh 'echo $(curl 34.214.8.105:8081)'
+			    sh 'echo $(curl http://34.214.8.105:8080)'
 			    }
 			}
 		}
